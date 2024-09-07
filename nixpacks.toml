@@ -1,2 +1,2 @@
 [phases]
-install = "npm install"
+install = "npm install --verbose"
