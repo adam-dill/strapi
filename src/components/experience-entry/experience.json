@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_experience_entry_experiences",
+  "info": {
+    "displayName": "Experience",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "CompanyName": {
+      "type": "string",
+      "required": true
+    },
+    "SubcontractName": {
+      "type": "string"
+    },
+    "StartDate": {
+      "type": "date"
+    },
+    "EndDate": {
+      "type": "date"
+    },
+    "CompanyUrl": {
+      "type": "string"
+    },
+    "ExperienceTask": {
+      "type": "component",
+      "repeatable": true,
+      "component": "experience-entry.experience-task"
+    }
+  }
+}

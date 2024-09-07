@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_experience_entry_experience_tasks",
+  "info": {
+    "displayName": "ExperienceTask",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ExperienceTask": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
