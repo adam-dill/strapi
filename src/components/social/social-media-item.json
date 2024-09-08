@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_social_social_media_items",
+  "info": {
+    "displayName": "SocialMediaItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "IconAltText": {
+      "type": "string"
+    },
+    "Url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

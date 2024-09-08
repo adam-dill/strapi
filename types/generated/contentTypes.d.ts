@@ -836,6 +836,7 @@ export interface ApiContactContact extends Schema.SingleType {
     ResumeSectionHeader: Attribute.Component<'resume-section-header.resume-section'>;
     Phone: Attribute.String;
     Email: Attribute.Email;
+    Website: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -854,19 +855,52 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiEducationEducation extends Schema.SingleType {
+  collectionName: 'educations';
+  info: {
+    singularName: 'education';
+    pluralName: 'educations';
+    displayName: 'Education';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ResumeSection: Attribute.Component<'resume-section-header.resume-section'> &
+      Attribute.Required;
+    EducationItems: Attribute.Component<'education.education-item', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::education.education',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::education.education',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiExperienceExperience extends Schema.SingleType {
   collectionName: 'experiences';
   info: {
     singularName: 'experience';
     pluralName: 'experiences';
     displayName: 'Experience';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     ResumeSectionHeader: Attribute.Component<'resume-section-header.resume-section'>;
-    ExperienceEntry: Attribute.Component<'experience-entry.experience', true>;
+    ExperienceEntries: Attribute.Component<'experience-entry.experience', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -897,7 +931,7 @@ export interface ApiHeaderHeader extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    BackgroundImage: Attribute.Media & Attribute.Required;
+    BackgroundImage: Attribute.Media<'images'> & Attribute.Required;
     Title: Attribute.String & Attribute.Required;
     SubTitle: Attribute.String;
     AllowResumeDownload: Attribute.Boolean &
@@ -914,6 +948,71 @@ export interface ApiHeaderHeader extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::header.header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSocialSocial extends Schema.SingleType {
+  collectionName: 'socials';
+  info: {
+    singularName: 'social';
+    pluralName: 'socials';
+    displayName: 'Social';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ResumeSectionHeader: Attribute.Component<'resume-section-header.resume-section'>;
+    SocialMediaItems: Attribute.Component<'social.social-media-item', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social.social',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social.social',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiToolboxToolbox extends Schema.SingleType {
+  collectionName: 'toolboxes';
+  info: {
+    singularName: 'toolbox';
+    pluralName: 'toolboxes';
+    displayName: 'Toolbox';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ResumeSectionHeader: Attribute.Component<'resume-section-header.resume-section'> &
+      Attribute.Required;
+    ListSections: Attribute.Component<'toolbox.list-section', true> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::toolbox.toolbox',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::toolbox.toolbox',
       'oneToOne',
       'admin::user'
     > &
@@ -941,8 +1040,11 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::about.about': ApiAboutAbout;
       'api::contact.contact': ApiContactContact;
+      'api::education.education': ApiEducationEducation;
       'api::experience.experience': ApiExperienceExperience;
       'api::header.header': ApiHeaderHeader;
+      'api::social.social': ApiSocialSocial;
+      'api::toolbox.toolbox': ApiToolboxToolbox;
     }
   }
 }

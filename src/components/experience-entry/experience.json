@@ -14,7 +14,8 @@
       "type": "string"
     },
     "StartDate": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "EndDate": {
       "type": "date"
@@ -26,6 +27,10 @@
       "type": "component",
       "repeatable": true,
       "component": "experience-entry.experience-task"
+    },
+    "JobTitle": {
+      "type": "string",
+      "required": true
     }
   }
 }

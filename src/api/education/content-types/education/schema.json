@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "educations",
+  "info": {
+    "singularName": "education",
+    "pluralName": "educations",
+    "displayName": "Education"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ResumeSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "resume-section-header.resume-section",
+      "required": true
+    },
+    "EducationItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "education.education-item"
+    }
+  }
+}

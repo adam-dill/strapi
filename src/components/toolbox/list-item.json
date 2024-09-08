@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_toolbox_list_items",
+  "info": {
+    "displayName": "ListItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ItemText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

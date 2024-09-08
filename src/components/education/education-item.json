@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_education_education_items",
+  "info": {
+    "displayName": "EducationItem"
+  },
+  "options": {},
+  "attributes": {
+    "SchoolName": {
+      "type": "string",
+      "required": true
+    },
+    "DegreeType": {
+      "type": "string",
+      "required": true
+    },
+    "DegreeName": {
+      "type": "string",
+      "required": true
+    },
+    "CompletedDate": {
+      "type": "date",
+      "required": true
+    }
+  }
+}

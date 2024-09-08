@@ -24,6 +24,9 @@
     "Email": {
       "type": "email",
       "required": false
+    },
+    "Website": {
+      "type": "string"
     }
   }
 }
